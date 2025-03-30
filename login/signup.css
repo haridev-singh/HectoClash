@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tektur:wght@400..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(137deg,#bbc5c3,#f7d4c7,#ddded7,#e8d6be);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 900px;
+    max-width: 600px;
+    margin: 50px 20px;
+    background-color: #ffffff4a;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 5px 5px 20px 20px #1a191a3b;
+  }
+
+.form-side {
+  flex: 1;
+  padding: 30px;
+}
+header img {
+  margin-right: 15px;
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.logo {
+    font-family: Tektur;
+    font-size: 40px;
+    font-weight: 600;
+    color: #42145f;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #42145f;
+  font-weight: 500;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  background-color: #f5f5f5;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #42145f;
+}
+
+.password-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.password-row .form-group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.password-input {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.create-btn {
+    width: 100%;
+    padding: 12px;
+    background: #42145f;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.create-btn:hover {
+  background-color: #42145f;
+}
+
+.login-option {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-option a {
+  color: #42145f;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .password-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
