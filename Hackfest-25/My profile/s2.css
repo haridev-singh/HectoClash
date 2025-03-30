@@ -1,0 +1,261 @@
+/* Updated CSS */
+.combined-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    grid-template-rows: auto auto auto;
+}
+
+.profile-section {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    text-align: center;
+    padding: 20px;
+    border-right: 2px solid #f0e5ff;
+}
+
+.performance-section {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    padding: 15px;
+}
+
+.speed-section {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    padding: 20px;
+}
+
+.friends-section {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+    padding-top: 20px;
+    border-top: 2px solid #f0e5ff;
+}
+
+.pie-chart {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #42145f 0% 65%,
+        #8e44ad 65% 80%,
+        #d0bae6 80% 100%
+    );
+    margin: 15px auto;
+    position: relative;
+}
+
+.pie-chart::after {
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    background: white;
+    border-radius: 50%;
+    top: 5%;
+    left: 5%;
+}
+
+.friends-list {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.friend-item {
+    padding: 10px 20px;
+    background-color: #f9f5ff;
+    border-radius: 20px;
+    color: #5d3a7a;
+}
+
+/* Keep existing styles below */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f0fa;
+    color: #333;
+}
+
+.navbar {
+    background-color: #42145f;
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgba(66, 20, 95, 0.3);
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.main-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.left-column {
+    flex: 7;
+}
+
+.right-column {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #d9c2f0;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #42145f;
+    font-size: 36px;
+    font-weight: bold;
+    border: 4px solid #42145f;
+}
+
+.profile-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #42145f;
+    margin-bottom: 5px;
+}
+
+.profile-ranking {
+    color: #7b5a9a;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    color: #42145f;
+    border-bottom: 2px solid #e0d0ee;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.speed-info {
+    background-color: #f0e5ff;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    color: #5d3a7a;
+    font-weight: 500;
+    border-left: 4px solid #42145f;
+}
+
+.actions-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.action-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background-color: #42145f;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #5d3a7a;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #8e44ad;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #9b59b6;
+    transform: translateY(-2px);
+}
+
+.btn-tertiary {
+    background-color: #e0d0ee;
+    color: #42145f;
+}
+
+.btn-tertiary:hover {
+    background-color: #d0bae6;
+    transform: translateY(-2px);
+}
+
+.ranking-section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ranking-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ranking-item {
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.ranking-item:nth-child(odd) {
+    background-color: #f9f5ff;
+}
+
+.ranking-item:nth-child(even) {
+    background-color: #f0e5ff;
+}
+
+.ranking-item:hover {
+    background-color: #e0d0ee;
+    transform: translateX(5px);
+}

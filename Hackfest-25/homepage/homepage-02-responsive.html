@@ -1,0 +1,442 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HectoClash - Homepage</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tektur:wght@400..900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Poppins, sans-serif;
+      }
+      body {
+        min-height: 100vh;
+        width: 100vw;
+        background: linear-gradient(137deg, #bbc5c3, #f7d4c7, #ddded7, #e8d6be);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      nav {
+        background-color: #ffffff31;
+        margin-top: 50px;
+        width: 90vw;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 3px 3px 2px rgba(26, 25, 25, 0.507);
+        border-radius: 20px;
+        padding: 0px 20px;
+
+        -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+          0 1px 3px rgba(255, 255, 255, 0.2) inset,
+          0 10px 20px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+          0 1px 3px rgba(255, 255, 255, 0.2) inset,
+          0 10px 20px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+          0 1px 3px rgba(255, 255, 255, 0.2) inset,
+          0 10px 20px rgba(0, 0, 0, 0.15);
+      }
+      nav ul {
+        width: 100%;
+        list-style-type: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      nav li {
+        height: 70px;
+      }
+      nav li a {
+        text-decoration: none;
+        height: 100%;
+        padding: 0px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000000;
+        border-radius: 10px;
+        font-size: 20px;
+      }
+      nav a:hover {
+        background-color: #ffffff25;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .logo img {
+        height: 38px;
+        width: auto;
+        object-fit: contain;
+      }
+      .logo a{
+        text-decoration: none;
+        margin-left: 15px;
+        color: #42145f;
+        font-size: 30px;
+        font-family: tektur;
+        font-weight: 600;
+        margin-right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="images/logo.png" alt="logo" />
+        <a href="#">HectoClash</a>
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Standings</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Sign Up</a></li>
+      </ul>
+    </nav>
+  </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HectoClash - Homepage</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tektur:wght@400..900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Poppins, sans-serif;
+      }
+      body {
+        min-height: 100vh;
+        width: 100vw;
+        background: linear-gradient(137deg, #bbc5c3, #f7d4c7, #ddded7, #e8d6be);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-attachment: fixed;
+      }
+      .menu {
+        display: flex;
+      }
+      nav {
+        background-color: #ffffff17;
+        backdrop-filter: blur(20px);
+        margin-top: 30px;
+        width: 90vw;
+        height: 70px;
+        position: sticky;
+        top: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 20px;
+        padding: 0 clamp(10px, 2%, 30px);
+        -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+          0 1px 3px rgba(255, 255, 255, 0.2) inset,
+          0 10px 20px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+          0 1px 3px rgba(255, 255, 255, 0.2) inset,
+          0 10px 20px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+          0 1px 3px rgba(255, 255, 255, 0.2) inset,
+          0 10px 20px rgba(0, 0, 0, 0.15);
+      }
+      nav ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: clamp(10px, 2%, 20px);
+      }
+      nav li {
+        height: 70px;
+      }
+      nav li a {
+        text-decoration: none;
+        height: 100%;
+        padding: 0 clamp(10px, 2%, 20px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000000;
+        border-radius: 10px;
+        font-size: clamp(16px, 1.5vw, 20px);
+        /* white-space: nowrap; */
+      }
+      nav li a:hover {
+        background-color: #ffffff0b;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .logo img {
+        height: clamp(32px, 5vw, 38px);
+        width: auto;
+        object-fit: contain;
+      }
+      .logo a {
+        text-decoration: none;
+        margin-left: clamp(10px, 2%, 15px);
+        color: #42145f;
+        font-size: clamp(20px, 3vw, 30px);
+        font-family: Tektur, sans-serif;
+        font-weight: 600;
+        margin-right: clamp(10px, 2%, 20px);
+      }
+      @media (max-width: 768px) {
+        .home,
+        .standings {
+          display: none;
+        }
+        nav li a {
+          padding: 0 clamp(10px, 2%, 15px);
+          font-size: clamp(16px, 1.5vw, 20px);
+        }
+        nav ul {
+          list-style-type: none;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          gap: clamp(10px, 2%, 20px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+        <div class="menu"><img src="/homepage/images/menu.svg" alt=""></div>
+      <div class="logo">
+        <img src="images/logo.png" alt="logo" />
+        <a href="#">HectoClash</a>
+      </div>
+      <ul>
+        <li class="home"><a href="#">Home</a></li>
+        <li class="standings"><a href="#">Standings</a></li>
+        <li class="login"><a href="#">Login</a></li>
+        <li class="sign-up"><a href="#">Sign Up</a></li>
+      </ul>
+    </nav>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HectoClash - Homepage</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tektur:wght@400..900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Poppins, sans-serif;
+      }
+      body {
+        min-height: 100vh;
+        width: 100vw;
+        background: linear-gradient(137deg, #bbc5c3, #f7d4c7, #ddded7, #e8d6be);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-attachment: fixed;
+      }
+      .menu {
+        display: none;
+      }
+      .menu-items {
+        display: none;
+      }
+      nav {
+        background-color: #ffffff17;
+        backdrop-filter: blur(20px);
+        margin-top: 30px;
+        width: 90vw;
+        height: 70px;
+        position: sticky;
+        top: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 20px;
+        padding: 0 clamp(10px, 2%, 30px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+          0 1px 3px rgba(255, 255, 255, 0.2) inset,
+          0 10px 20px rgba(0, 0, 0, 0.15);
+      }
+      nav ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: clamp(10px, 2%, 20px);
+      }
+      nav li {
+        height: 70px;
+      }
+      nav li a {
+        text-decoration: none;
+        height: 100%;
+        padding: 0 clamp(10px, 2%, 20px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000000;
+        border-radius: 10px;
+        font-size: clamp(16px, 1.5vw, 20px);
+      }
+      nav li a:hover {
+        background-color: #ffffff0b;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .logo img {
+        height: clamp(32px, 5vw, 38px);
+        width: auto;
+        object-fit: contain;
+      }
+      .logo a {
+        text-decoration: none;
+        margin-left: clamp(10px, 2%, 15px);
+        color: #42145f;
+        font-size: clamp(20px, 3vw, 30px);
+        font-family: Tektur, sans-serif;
+        font-weight: 600;
+        margin-right: clamp(10px, 2%, 20px);
+      }
+
+      /* Updated Mobile Styles */
+      @media (max-width: 768px) {
+        nav {
+          position: relative;
+          overflow: visible;
+          padding: 0 20px;
+        }
+        .menu {
+          display: flex;
+          order: 1;
+          z-index: 1001;
+          cursor: pointer;
+          margin-right: 15px;
+        }
+        .logo {
+          order: 2;
+          margin-right: auto;
+        }
+        nav > ul {
+          order: 3;
+          display: flex;
+          gap: 10px;
+          margin-left: auto;
+        }
+        .menu-items {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background: #ffffffd9;
+          backdrop-filter: blur(20px);
+          display: none;
+          transform: translateY(-20px);
+          opacity: 0;
+          transition: all 0.3s ease;
+          z-index: 1000;
+          border-radius: 0 0 20px 20px;
+          padding: 15px 0;
+        }
+        .menu-items.active {
+          display: block;
+          transform: translateY(0);
+          opacity: 1;
+        }
+        .menu-items ul {
+          flex-direction: column;
+          gap: 10px;
+          padding: 0 20px;
+        }
+        .menu-items li {
+          height: 50px;
+        }
+        .menu-items li a {
+          justify-content: flex-start;
+          padding: 12px 20px;
+          font-size: 18px;
+        }
+        .home,
+        .standings {
+          display: none;
+        }
+        .login,
+        .sign-up {
+          display: flex !important;
+          height: 50px;
+        }
+        .login a,
+        .sign-up a {
+          font-size: 16px;
+          padding: 10px 15px;
+          background: #ffffff30;
+          border-radius: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="menu"><img src="/homepage/images/menu1.svg" alt="Menu" /></div>
+      <div class="logo">
+        <img src="images/logo.png" alt="logo" />
+        <a href="#">HectoClash</a>
+      </div>
+      <div class="menu-items">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Standings</a></li>
+          <li><a href="#">My Friends</a></li>
+          <li><a href="#">My Games</a></li>
+        </ul>
+      </div>
+      <ul>
+        <li class="login"><a href="#">Login</a></li>
+        <li class="sign-up"><a href="#">Sign Up</a></li>
+      </ul>
+    </nav>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuButton = document.querySelector(".menu");
+        const menuItems = document.querySelector(".menu-items");
+
+        menuButton.addEventListener("click", (e) => {
+          e.stopPropagation();
+          menuItems.classList.toggle("active");
+        });
+
+        document.addEventListener("click", (e) => {
+          if (!menuItems.contains(e.target) && !menuButton.contains(e.target)) {
+            menuItems.classList.remove("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
