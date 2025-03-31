@@ -64,6 +64,7 @@ const sendPasswordReset = async (email) => {
 // Show error message in the UI
 const showError = (message) => {
   const errorDiv = document.getElementById('showError');
+  errorDiv.style.display="block";
   errorDiv.innerHTML = `<p style="color: red;">${message}</p>`;
 };
 

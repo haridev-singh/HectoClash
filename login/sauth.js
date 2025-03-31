@@ -51,7 +51,7 @@ const signUp = async (fullName, username, email, password) => {
 // Show error message
 const showError = (message) => {
   const errorDiv = document.getElementById('showError');
-  errorDiv.style.display='block';
+  errorDiv.style.display="block";
   errorDiv.innerHTML = `<p style="color: red;">${message}</p>`;
 };
 
