@@ -5,12 +5,12 @@ import { getFirestore, doc, setDoc } from 'https://www.gstatic.com/firebasejs/9.
 
 // Firebase configuration object
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+    apiKey: "AIzaSyBeQmcSvoDqT6qo-WsxFjpUUuhPs-rfrRA",
+    authDomain: "hectoclash.firebaseapp.com",
+    projectId: "hectoclash",
+    storageBucket: "hectoclash.firebasestoragef.app",
+    messagingSenderId: "362838792082",
+    appId: "1:362838792082:web:ef633703338293672b934b"
 };
 
 // Initialize Firebase
@@ -40,7 +40,7 @@ const signUp = async (fullName, username, email, password) => {
     alert('A verification email has been sent to your email address. Please check your inbox.');
 
     // Optionally, you can redirect the user or clear the form
-    // window.location.href = "some-other-page.html";
+    window.location.href = "/login/loading.html";
 
   } catch (error) {
     console.error('Error signing up:', error.message);
@@ -91,4 +91,8 @@ document.querySelectorAll('.toggle-password').forEach((button) => {
       e.target.textContent = '👁️'; // Change to an eye emoji
     }
   });
+});
+loginLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = '/login/login.html'; // Update with actual login path
 });
