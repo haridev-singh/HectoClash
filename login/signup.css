@@ -138,6 +138,17 @@ input:focus {
   margin-left: 5px;
 }
 
+#showError{
+  background-color:hsl(327,90%,28%);
+  color:white;
+  padding:10px 20px;
+  margin:10px;
+  border-radius: 5px;
+  font-size:1rem;
+  opacity:0;
+  animation:fadeOut 7s forwards;
+}
+
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -147,22 +158,4 @@ input:focus {
     flex-direction: column;
     gap: 20px;
   }
-}
-/* signup.css */
-.error-message {
-  padding: 12px;
-  margin-bottom: 20px;
-  background: #fee;
-  border: 1px solid #f99;
-  border-radius: 8px;
-  color: #c00;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  animation: slideIn 0.3s ease;
-}
-
-@keyframes slideIn {
-  from { opacity: 0; transform: translateY(-10px) }
-  to { opacity: 1; transform: translateY(0) }
 }
