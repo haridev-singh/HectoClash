@@ -17,7 +17,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-
+const loginLink = document.querySelector('.login-option a');
 // Function to handle user sign-up
 const signUp = async (fullName, username, email, password) => {
   try {
@@ -40,7 +40,7 @@ const signUp = async (fullName, username, email, password) => {
     alert('A verification email has been sent to your email address. Please check your inbox.');
 
     // Optionally, you can redirect the user or clear the form
-    window.location.href = "/login/loading.html";
+    window.location.href = "/login/login.html";
 
   } catch (error) {
     console.error('Error signing up:', error.message);
@@ -51,6 +51,7 @@ const signUp = async (fullName, username, email, password) => {
 // Show error message
 const showError = (message) => {
   const errorDiv = document.getElementById('showError');
+  errorDiv.style.display='block';
   errorDiv.innerHTML = `<p style="color: red;">${message}</p>`;
 };
 

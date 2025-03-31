@@ -140,6 +140,7 @@ input:focus {
 
 #showError{
   background-color:hsl(327,90%,28%);
+  display: none;
   color:white;
   padding:10px 20px;
   margin:10px;
