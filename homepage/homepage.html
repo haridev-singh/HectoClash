@@ -1,117 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HectoClash</title>
-    <!-- <link rel="stylesheet" href="homepage.css" /> -->
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap");
 
-      * {
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Tektur", sans-serif;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HectoClash</title>
+  <script type="module" src="homepage.js" defer></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap");
 
-      body {
-        overflow-x: hidden;
-      }
+    * {
+      box-sizing: border-box;
+    }
 
-      .content {
-        min-height: 100vh;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        z-index: 0;
-      }
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Tektur", sans-serif;
+    }
 
-      video {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
-      }
+    body {
+      overflow-x: hidden;
+    }
 
-      /* NAVBAR */
-      .navbar {
-        color: rgb(30, 62, 176);
-        backdrop-filter: blur(12px) saturate(150%);
-        -webkit-backdrop-filter: blur(12px) saturate(150%);
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-        /* border-radius: 16px; */
-        height: 70px;
-        width: 100%;
-        /* margin: 20px auto; */
-        padding: 10px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-        z-index: 10;
-        overflow-x: hidden;
-      }
+    .content {
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 0;
+    }
 
-      .nav-left {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        margin-left: 20px;
-      }
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
 
-      .logo img {
-        height: 38px;
-        width: auto;
-        object-fit: contain;
-        margin-right: 15px;
-      }
+    /* NAVBAR */
+    .navbar {
+      color: rgb(30, 62, 176);
+      backdrop-filter: blur(12px) saturate(150%);
+      -webkit-backdrop-filter: blur(12px) saturate(150%);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      /* border-radius: 16px; */
+      height: 70px;
+      width: 100%;
+      /* margin: 20px auto; */
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+      overflow-x: hidden;
+    }
 
-      .name {
-        color: #ffffff;
-        font-size: 30px;
-        font-weight: 600;
-        margin-right: 20px;
-      }
+    .nav-left {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-left: 20px;
+    }
 
-      a {
-        text-decoration: none;
-        white-space: nowrap;
-      }
-      .search-bar {
-        position: relative;
-        display: flex;
-        align-items: center;
-      }
+    .logo img {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+      margin-right: 15px;
+    }
 
-      .search-icon {
-        position: absolute;
-        left: 12px;
-        top: 50%;
-        transform: translateY(-50%); /* Centers icon vertically */
-        color: #ffffff;
-        z-index: 10;
-        pointer-events: none;
-      }
+    .name {
+      color: #ffffff;
+      font-size: 30px;
+      font-weight: 600;
+      margin-right: 20px;
+    }
 
-      /* .search-bar input {
+    a {
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .search-bar {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      /* Centers icon vertically */
+      color: #ffffff;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    /* .search-bar input {
         padding-left: 40px;
       } */
 
-      /* Ensure icon stays responsive */
-      /* @media (max-width: 768px) {
+    /* Ensure icon stays responsive */
+    /* @media (max-width: 768px) {
         .search-icon {
           left: 08px;
         }
@@ -121,198 +125,205 @@
         }
       } */
 
-      .search-bar input {
-        /* background-color: #4e4e50;
+    .search-bar input {
+      /* background-color: #4e4e50;
         color: #ffffff;
         border: 2px solid rgba(128, 128, 128, 0.372);
         border-radius: 20px;
         padding: 10px 40px;
         width: 250px;
         transition: border 0.3s ease; */
-        background-color: #4e4e50;
-        color: #ffffff;
-        border: 2px solid rgba(128, 128, 128, 0.372);
-        border-radius: 20px;
-        padding: 10px 10px 10px 40px; /* Right padding reduced */
-        width: 250px;
-        height: 40px; /* Explicit height helps with alignment */
-        transition: all 0.3s ease;
-      }
+      background-color: #4e4e50;
+      color: #ffffff;
+      border: 2px solid rgba(128, 128, 128, 0.372);
+      border-radius: 20px;
+      padding: 10px 10px 10px 40px;
+      /* Right padding reduced */
+      width: 250px;
+      height: 40px;
+      /* Explicit height helps with alignment */
+      transition: all 0.3s ease;
+    }
 
-      .search-bar input:focus {
-        border: 2px solid rgba(128, 128, 128, 0.797);
-        outline: none;
-      }
+    .search-bar input:focus {
+      border: 2px solid rgba(128, 128, 128, 0.797);
+      outline: none;
+    }
 
-      .search-bar input:hover {
-        border-color: rgba(255, 255, 255, 0.5);
-      }
+    .search-bar input:hover {
+      border-color: rgba(255, 255, 255, 0.5);
+    }
 
-      .nav-right {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-      }
+    .nav-right {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
 
-      .login a,
-      .sign-up a {
-        padding: 5px 10px;
-        color: #000000;
-        font-size: 20px;
-        margin-right: 20px;
-        background-color: #ffffff;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: filter 0.3s ease;
-      }
+    .login a,
+    .sign-up a {
+      padding: 5px 10px;
+      color: #000000;
+      font-size: 20px;
+      margin-right: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: filter 0.3s ease;
+    }
 
-      .login a:hover,
-      .sign-up a:hover {
-        filter: brightness(1.1);
-      }
+    .login a:hover,
+    .sign-up a:hover {
+      filter: brightness(1.1);
+    }
 
-      /* GAME MODE CARD */
-      .game-mode-card {
-        width: 90%;
-        max-width: 1000px;
-        margin: auto;
-        padding: 30px;
-        border-radius: 20px;
-        background: rgba(255, 255, 255, 0);
-        text-align: center;
-        color: #fff;
-        z-index: 5;
-        position: relative;
-        box-shadow: none;
-        border: none;
-      }
+    .profile_icon img {
+      border-radius: 40px;
+      object-fit: cover;
+    }
 
-      /* .card-title {
+    /* GAME MODE CARD */
+    .game-mode-card {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0);
+      text-align: center;
+      color: #fff;
+      z-index: 5;
+      position: relative;
+      box-shadow: none;
+      border: none;
+    }
+
+    /* .card-title {
   font-size: 28px;
   color: #ffffff;
   margin-bottom: 30px;
   text-shadow: 0 0 5px #000;
 } */
 
-      .mode-options {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 35px;
-      }
+    .mode-options {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 35px;
+    }
 
-      .mode-card {
-        /* background: rgba(255, 255, 255, 0.06); */
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(20px) saturate(150%);
-        -webkit-backdrop-filter: blur(12px) saturate(150%);
-        border-radius: 16px;
-        padding: 25px 20px;
-        flex: 1 1 280px;
-        min-height: 350px;
-        max-width: 350px;
-        transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.3s ease;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        transform-style: preserve-3d;
-        backface-visibility: hidden;
-      }
+    .mode-card {
+      /* background: rgba(255, 255, 255, 0.06); */
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px) saturate(150%);
+      -webkit-backdrop-filter: blur(12px) saturate(150%);
+      border-radius: 16px;
+      padding: 25px 20px;
+      flex: 1 1 280px;
+      min-height: 350px;
+      max-width: 350px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.3s ease;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+    }
 
-      .mode-card:hover {
-        transform: perspective(800px) rotateY(5deg) scale(1.03);
-        box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
-        opacity: 0.85;
-      }
+    .mode-card:hover {
+      transform: perspective(800px) rotateY(5deg) scale(1.03);
+      box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
+      opacity: 0.85;
+    }
 
-      .mode-card h3 {
-        white-space: nowrap;
-        color: #ffffff;
-        font-size: 200%;
-        margin-bottom: 20px;
-      }
+    .mode-card h3 {
+      white-space: nowrap;
+      color: #ffffff;
+      font-size: 200%;
+      margin-bottom: 20px;
+    }
 
-      .mode-card p {
-        color: #dddddd;
-        font-size: 100%;
-        margin-bottom: 40px;
-      }
+    .mode-card p {
+      color: #dddddd;
+      font-size: 100%;
+      margin-bottom: 40px;
+    }
 
-      .play-btn {
-        display: inline-block;
-        background-color: #ffffff;
-        color: #000;
-        padding: 10px 20px;
-        border-radius: 30px;
-        font-weight: bold;
-        text-decoration: none;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-      }
+    .play-btn {
+      display: inline-block;
+      background-color: #ffffff;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
 
-      .play-btn:hover {
-        background-color: #e5e5e5;
-        transform: scale(1.1);
-      }
+    .play-btn:hover {
+      background-color: #e5e5e5;
+      transform: scale(1.1);
+    }
 
-      /* FOOTER */
-      .footer {
-        width: 100%;
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(12px) saturate(150%);
-        -webkit-backdrop-filter: blur(12px) saturate(150%);
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        /* box-shadow: 0 -6px 40px rgba(255, 255, 255, 0.05), 0 0 12px rgba(255, 255, 255, 0.06) inset; */
-        color: #ffffff;
-        padding: 40px 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 16px;
-        border-radius: 20px 20px 0 0;
-        margin-top: auto;
-        position: relative;
-        z-index: 5;
-        transition: all 0.3s ease-in-out;
-      }
+    /* FOOTER */
+    .footer {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px) saturate(150%);
+      -webkit-backdrop-filter: blur(12px) saturate(150%);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      /* box-shadow: 0 -6px 40px rgba(255, 255, 255, 0.05), 0 0 12px rgba(255, 255, 255, 0.06) inset; */
+      color: #ffffff;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      border-radius: 20px 20px 0 0;
+      margin-top: auto;
+      position: relative;
+      z-index: 5;
+      transition: all 0.3s ease-in-out;
+    }
 
-      .footer-content {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        width: 100%;
-        /* max-width: 1200px; */
-      }
+    .footer-content {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      width: 100%;
+      /* max-width: 1200px; */
+    }
 
-      .footer-section {
-        margin: 10px;
-        min-width: 180px;
-      }
+    .footer-section {
+      margin: 10px;
+      min-width: 180px;
+    }
 
-      .footer-section h3 {
-        color: #ffffff;
-        margin-bottom: 15px;
-        font-size: 20px;
-      }
+    .footer-section h3 {
+      color: #ffffff;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
 
-      .footer-section ul {
-        list-style: none;
-        padding: 0;
-      }
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
 
-      .footer-section ul li {
-        margin-bottom: 10px;
-      }
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
 
-      .footer-section a {
-        color: #ffffffcc;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
+    .footer-section a {
+      color: #ffffffcc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
 
-      .footer-section a:hover {
-        color: #ffffff;
-      }
+    .footer-section a:hover {
+      color: #ffffff;
+    }
 
-      /* .footer-section p a {
+    /* .footer-section p a {
   color: #ffffffcc;
   text-decoration: none;
 }
@@ -321,267 +332,312 @@
   color: #ffffff;
 } */
 
-      /* RESPONSIVE */
-      @media (max-width: 768px) {
-        .search-bar input {
-          width: 150px;
-          margin-left: 10px;
-        }
-
-        .name {
-          font-size: 22px;
-        }
-
-        .login a,
-        .sign-up a {
-          font-size: 16px;
-          padding: 4px 8px;
-        }
-
-        .logo img {
-          height: 30px;
-        }
-
-        .navbar {
-          flex-direction: column;
-          height: auto;
-          padding: 20px;
-        }
-
-        .nav-left,
-        .nav-right {
-          flex-direction: column;
-          margin: 10px 0;
-          gap: 10px;
-        }
-
-        .search-bar {
-          margin-top: 10px;
-        }
-
-        .game-mode-card {
-          padding: 20px;
-        }
-
-        .footer-content {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .footer-section {
-          text-align: center;
-        }
-      }
-      @media (min-width: 500px) and (max-width: 768px) {
-        .footer-content {
-          flex-direction: row;
-          justify-content: space-between;
-          gap: 20px;
-        }
-
-        .footer-section {
-          flex: 1 1 45%; /* 45% width with grow/shrink */
-          min-width: 200px; /* Minimum width before wrapping */
-          margin: 10px 0;
-        }
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .search-bar input {
+        width: 150px;
+        margin-left: 10px;
       }
 
-      @media (max-width: 900px) {
-        .name {
-          font-size: 26px;
-        }
-        .search-bar input {
-          width: 240px;
-        }
-        .search-icon svg {
-          width: 25px;
-          height: 25px;
-        }
-        .search-bar input {
-          padding: 8px 8px 8px 36px;
-          height: 36px;
-        }
-        .login a,
-        .sign-up a {
-          font-size: 18px;
-        }
+      .name {
+        font-size: 22px;
       }
-      @media (max-width: 800px) {
-        .name {
-          font-size: 24px;
-        }
-        .search-bar input {
-          width: 200px;
-        }
-        .logo img {
-          height: 34px;
-        }
+
+      .login a,
+      .sign-up a {
+        font-size: 16px;
+        padding: 4px 8px;
       }
-      @media (min-width: 426px) and (max-width: 769px) {
-        .navbar {
-          flex-direction: row;
-          height: auto;
-          padding: 8px 12px;
-        }
-        .nav-left {
-          align-items: center;
-        }
-        .nav-left,
-        .nav-right {
-          flex-direction: row;
-          margin: 0;
-        }
 
-        .logo img {
-          height: 28px;
-          margin-right: 8px;
-        }
-        .name {
-          font-size: 18px;
-          margin-right: 10px;
-        }
-
-        .search-bar input {
-          width: 140px;
-          padding: 6px 6px 6px 30px;
-          font-size: 14px;
-          height: 32px;
-        }
-
-        .search-icon {
-          left: 8px;
-        }
-        .search-icon svg {
-          width: 16px;
-          height: 16px;
-        }
-
-        .login a,
-        .sign-up a {
-          font-size: 14px;
-          padding: 3px 6px;
-          margin-right: 8px;
-        }
+      .logo img {
+        height: 30px;
       }
-      @media (min-width: 426px) and (max-width: 550px) {
-        .nav-left {
-          margin-left: 5px;
-        }
-        .logo img {
-          height: 24px;
-          margin-right: 5px;
-        }
-        .name {
-          font-size: 16px;
-          margin-right: 5px;
-        }
-        .search-bar input {
-          width: 120px;
-        }
-        .login a,
-        .sign-up a {
-          padding: 3px 5px;
-          margin-right: 5px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="content">
-      <video
-        src="/Videos/12421669_3840_2160_30fps.mp4"
-        autoplay
-        muted
-        loop
-        playsinline
-      ></video>
 
-      <nav class="navbar">
-        <div class="nav-left">
-          <div class="logo">
-            <img
-              src="/homepage/images/output-onlinepngtools.png"
-              alt="HectoClash logo"
-            />
-          </div>
-          <div class="name">HectoClash</div>
-          <div class="search-bar">
-            <div class="search-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="25"
-                height="25"
-                fill="currentColor"
-              >
-                <path
-                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
-                />
-              </svg>
-            </div>
-            <input type="text" name="player-id" placeholder="Search player" />
-          </div>
+      .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+      }
+
+      .nav-left,
+      .nav-right {
+        flex-direction: column;
+        margin: 10px 0;
+        gap: 10px;
+      }
+
+      .search-bar {
+        margin-top: 10px;
+      }
+
+      .game-mode-card {
+        padding: 20px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-section {
+        text-align: center;
+      }
+    }
+
+    @media (min-width: 500px) and (max-width: 768px) {
+      .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .footer-section {
+        flex: 1 1 45%;
+        /* 45% width with grow/shrink */
+        min-width: 200px;
+        /* Minimum width before wrapping */
+        margin: 10px 0;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .name {
+        font-size: 26px;
+      }
+
+      .search-bar input {
+        width: 240px;
+      }
+
+      .search-icon svg {
+        width: 25px;
+        height: 25px;
+      }
+
+      .search-bar input {
+        padding: 8px 8px 8px 36px;
+        height: 36px;
+      }
+
+      .login a,
+      .sign-up a {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .name {
+        font-size: 24px;
+      }
+
+      .search-bar input {
+        width: 200px;
+      }
+
+      .logo img {
+        height: 34px;
+      }
+    }
+
+    @media (min-width: 426px) and (max-width: 769px) {
+      .navbar {
+        flex-direction: row;
+        height: auto;
+        padding: 8px 12px;
+      }
+
+      .nav-left {
+        align-items: center;
+      }
+
+      .nav-left,
+      .nav-right {
+        flex-direction: row;
+        margin: 0;
+      }
+
+      .logo img {
+        height: 28px;
+        margin-right: 8px;
+      }
+
+      .name {
+        font-size: 18px;
+        margin-right: 10px;
+      }
+
+      .search-bar input {
+        width: 140px;
+        padding: 6px 6px 6px 30px;
+        font-size: 14px;
+        height: 32px;
+      }
+
+      .search-icon {
+        left: 8px;
+      }
+
+      .search-icon svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .login a,
+      .sign-up a {
+        font-size: 14px;
+        padding: 3px 6px;
+        margin-right: 8px;
+      }
+
+      #profile-container {
+        position: relative;
+      }
+
+      #profile-options {
+        position: absolute;
+        top: 40px;
+        right: 0;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        display: none;
+        z-index: 10;
+      }
+
+      #profile-options button {
+        padding: 10px;
+        border: none;
+        background: #fff;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+      }
+
+      #profile-options button:hover {
+        background-color: #f0f0f0;
+      }
+    }
+
+    @media (min-width: 426px) and (max-width: 550px) {
+      .nav-left {
+        margin-left: 5px;
+      }
+
+      .logo img {
+        height: 24px;
+        margin-right: 5px;
+      }
+
+      .name {
+        font-size: 16px;
+        margin-right: 5px;
+      }
+
+      .search-bar input {
+        width: 120px;
+      }
+
+      .login a,
+      .sign-up a {
+        padding: 3px 5px;
+        margin-right: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <video src="/Videos/12421669_3840_2160_30fps.mp4" autoplay muted loop playsinline></video>
+
+    <nav class="navbar">
+      <div class="nav-left">
+        <div class="logo">
+          <img src="/homepage/images/output-onlinepngtools.png" alt="HectoClash logo" />
         </div>
-        <div class="nav-right">
-          <div class="login"><a href="#">Login</a></div>
-          <div class="sign-up"><a href="#">Sign Up</a></div>
+        <div class="name">HectoClash</div>
+        <div class="search-bar">
+          <div class="search-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height="25" fill="currentColor">
+              <path
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+            </svg>
+          </div>
+          <input type="text" name="player-id" placeholder="Search player" />
         </div>
-      </nav>
+      </div>
+      <div class="nav-right">
+        <div class="login" id="login-btn"><a href="/login/login.html">Login</a></div>
+        <div class="sign-up" id="signup-btn"><a href="/login/signup.html">Sign Up</a></div>
+      </div>
+      <div id="profile-container" style="display:none;">
+        <div class="profile_icon">
+          <img id="profile-icon" width="40px"
+            src="/homepage/images/profile-icon.png"
+            alt="profile-icon">
+        </div>
+        <div id="profile-options" style="display:none;">
+          <button id="my-profile-btn">My Profile</button>
+          <button id="settings-btn">Settings</button>
+          <button id="logout-btn">Logout</button>
+        </div>
+      </div>
+    </nav>
 
-      <div class="game-mode-card">
-        <!-- <h2 class="card-title">Choose Your Mode</h2> -->
-        <div class="mode-options">
-          <div class="mode-card friend-mode">
-            <h3>👥 Play with Friends</h3>
-            <p>Invite your friends and battle it out in a mental math duel!</p>
-            <a href="#" class="play-btn">Start</a>
-          </div>
-          <div class="mode-card random-mode">
-            <h3>🎲 Play Random</h3>
-            <p>Get matched with a random player and clash in real-time!</p>
-            <a href="#" class="play-btn">Quick Match</a>
-          </div>
+    <div class="game-mode-card">
+      <div class="mode-options">
+        <div class="mode-card friend-mode">
+          <h3>👥 Play with Friends</h3>
+          <p>Invite your friends and battle it out in a mental math duel!</p>
+          <a href="#" class="play-btn">Start</a>
+        </div>
+        <div class="mode-card random-mode">
+          <h3>🎲 Play Random</h3>
+          <p>Get matched with a random player and clash in real-time!</p>
+          <a href="#" class="play-btn">Quick Match</a>
         </div>
       </div>
     </div>
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Game Modes</h3>
-          <ul>
-            <li><a href="#">👥 Play with Friends</a></li>
-            <li><a href="#">🎲 Random Clash</a></li>
-            <li><a href="#">📊 Leaderboard</a></li>
-            <li><a href="#">⚔ Duel History</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>Learn & Train</h3>
-          <ul>
-            <li><a href="#">📚 Mental Math Tips</a></li>
-            <li><a href="#">🧠 Practice Zone</a></li>
-            <li><a href="#">🎥 Tutorial Videos</a></li>
-            <li><a href="#">📈 Player Analytics</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>Connect</h3>
-          <ul>
-            <li><a href="#">💬 Community Forum</a></li>
-            <li><a href="#">📣 Discord Server</a></li>
-            <li><a href="#">📱 Mobile App (Coming Soon)</a></li>
-            <li><a href="#">🛠 Report a Bug</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>Contact</h3>
-          <p>
-            Email:
-            <a href="mailto:support@hectoclash.com">support@hectoclash.com</a>
-          </p>
-          <p>&copy; 2025 HectoClash. Level up your mind.</p>
-        </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Game Modes</h3>
+        <ul>
+          <li><a href="#">👥 Play with Friends</a></li>
+          <li><a href="#">🎲 Random Clash</a></li>
+          <li><a href="#">📊 Leaderboard</a></li>
+          <li><a href="#">⚔ Duel History</a></li>
+        </ul>
       </div>
-    </footer>
-  </body>
+      <div class="footer-section">
+        <h3>Learn & Train</h3>
+        <ul>
+          <li><a href="#">📚 Mental Math Tips</a></li>
+          <li><a href="#">🧠 Practice Zone</a></li>
+          <li><a href="#">🎥 Tutorial Videos</a></li>
+          <li><a href="#">📈 Player Analytics</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect</h3>
+        <ul>
+          <li><a href="#">💬 Community Forum</a></li>
+          <li><a href="#">📣 Discord Server</a></li>
+          <li><a href="#">📱 Mobile App (Coming Soon)</a></li>
+          <li><a href="#">🛠 Report a Bug</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>
+          Email:
+          <a href="mailto:support@hectoclash.com">support@hectoclash.com</a>
+        </p>
+        <p>&copy; 2025 HectoClash. Level up your mind.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>

@@ -1,8 +1,8 @@
-// Importing Firebase modules
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
-import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
+// Import Firebase libraries
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js";
 
-// Initialize Firebase with your Firebase project configuration
+// Your Firebase config (replace these with your actual Firebase project details)
 const firebaseConfig = {
     apiKey: "AIzaSyBeQmcSvoDqT6qo-WsxFjpUUuhPs-rfrRA",
     authDomain: "hectoclash.firebaseapp.com",
@@ -16,37 +16,53 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Function to handle the display of login/signup/profile buttons
-export function setupAuthUI() {
-  onAuthStateChanged(auth, (user) => {
+// DOM Elements
+const loginBtn = document.getElementById("login-btn");
+const signupBtn = document.getElementById("signup-btn");
+const profileContainer = document.getElementById("profile-container");
+const profileIcon = document.getElementById("profile-icon");
+const profileOptions = document.getElementById("profile-options");
+const myProfileBtn = document.getElementById("my-profile-btn");
+const settingsBtn = document.getElementById("settings-btn");
+const logoutBtn = document.getElementById("logout-btn");
+
+// Check if user is logged in
+onAuthStateChanged(auth, user => {
     if (user) {
-      const userPhotoURL = user.photoURL || 'default-avatar.png'; // Default image if no photo exists
-      document.getElementById('loginButton').style.display = 'none';
-      document.getElementById('signUpButton').style.display = 'none';
-      document.getElementById('profilePhoto').style.display = 'flex';
-      document.getElementById('userPhoto').src = userPhotoURL;
+        // User is logged in
+        loginBtn.style.display = "none";
+        signupBtn.style.display = "none";
+        profileContainer.style.display = "block";
+        profileIcon.src = user.photoURL || "/homepage/images/profile-icon.png";  // Use user's photo or default icon
     } else {
-      document.getElementById('loginButton').style.display = 'block';
-      document.getElementById('signUpButton').style.display = 'block';
-      document.getElementById('profilePhoto').style.display = 'none';
+        // User is not logged in
+        loginBtn.style.display = "block";
+        signupBtn.style.display = "block";
+        profileContainer.style.display = "none";
     }
-  });
-}
+});
 
-// Function to toggle profile options menu visibility
-export function toggleProfileOptions() {
-  const profileOptions = document.getElementById('profileOptions');
-  profileOptions.style.display = profileOptions.style.display === 'none' || profileOptions.style.display === '' ? 'block' : 'none';
-}
+// Profile icon click event to show dropdown options
+profileIcon.addEventListener("click", () => {
+    profileOptions.style.display = profileOptions.style.display === "block" ? "none" : "block";
+});
 
-// Function to handle logout
-export function logout() {
-  signOut(auth)
-    .then(() => {
-      console.log("User logged out");
-      window.location.reload(); // Reload the page to reflect the changes
-    })
-    .catch((error) => {
-      console.error("Error during logout:", error.message);
+// Handle "My Profile" button click
+myProfileBtn.addEventListener("click", () => {
+    window.location.href = "profile.html";  // Redirect to My Profile page
+});
+
+// Handle "Settings" button click
+settingsBtn.addEventListener("click", () => {
+    window.location.href = "settings.html";  // Redirect to Settings page
+});
+
+// Handle "Logout" button click
+logoutBtn.addEventListener("click", () => {
+    signOut(auth).then(() => {
+        console.log("User logged out");
+        window.location.reload();  // Reload the page to update UI
+    }).catch((error) => {
+        console.error("Logout Error:", error);
     });
-}
+});
