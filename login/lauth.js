@@ -17,8 +17,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-const signupLink = document.querySelector(".signup a");
-
 // Function to handle login
 const login = async (email, password, rememberMe) => {
   try {
@@ -69,11 +67,11 @@ const showError = (message) => {
 };
 
 // Handle form submission for login
-document.querySelector('form').addEventListener('submit', (e) => {
+document.getElementById('loginsubmit').addEventListener('click', (e) => {
   e.preventDefault();
 
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
+  const email = document.getElementById('loginemail').value;
+  const password = document.getElementById('loginpassword').value;
   const rememberMe = document.getElementById('rememberMe').checked;
 
   // Validate form inputs
@@ -99,21 +97,3 @@ document.getElementById('forgotPassword').addEventListener('click', (e) => {
 
   sendPasswordReset(email);
 });
-
-// Toggle password visibility
-document.querySelector('.toggle-password').addEventListener('click', (e) => {
-  const passwordInput = document.getElementById('password');
-  if (passwordInput.type === 'password') {
-    passwordInput.type = 'text';
-    e.target.textContent = '🙈'; // Change to eye-slash emoji
-  } else {
-    passwordInput.type = 'password';
-    e.target.textContent = '👁️'; // Change to eye emoji
-  }
-});
-
-signupLink.addEventListener("click", (e) => {
-    e.preventDefault();
-    // Redirect to signup page
-    window.location.href = "/login/signup.html"; // Replace with actual signup URL
-  });
