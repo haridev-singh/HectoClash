@@ -17,9 +17,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-const loginLink = document.querySelector('.login-option a');
 // Function to handle user sign-up
-const signUp = async (fullName, username, email, password) => {
+const signUp = async (username, email, password) => {
   try {
     // Create user in Firebase Authentication
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -27,7 +26,6 @@ const signUp = async (fullName, username, email, password) => {
 
     // Store additional user info in Firestore
     await setDoc(doc(db, "users", user.uid), {
-      fullName: fullName,
       username: username,
       email: email
     });
@@ -56,17 +54,16 @@ const showError = (message) => {
 };
 
 // Handle form submission
-document.querySelector('form').addEventListener('submit', (e) => {
+document.getElementById('signupsubmit').addEventListener('click', (e) => {
   e.preventDefault();
 
-  const fullName = document.getElementById('fullName').value;
   const username = document.getElementById('username').value;
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
   const confirmPassword = document.getElementById('confirmPassword').value;
 
   // Validate form inputs
-  if (!fullName || !username || !email || !password || !confirmPassword) {
+  if (!username || !email || !password || !confirmPassword) {
     showError('Please fill in all fields.');
     return;
   }
@@ -77,23 +74,5 @@ document.querySelector('form').addEventListener('submit', (e) => {
   }
 
   // Call the signUp function
-  signUp(fullName, username, email, password);
-});
-
-// Toggle password visibility
-document.querySelectorAll('.toggle-password').forEach((button) => {
-  button.addEventListener('click', (e) => {
-    const passwordInput = e.target.previousElementSibling;
-    if (passwordInput.type === 'password') {
-      passwordInput.type = 'text';
-      e.target.textContent = '🙈'; // Change to an eye-slash emoji
-    } else {
-      passwordInput.type = 'password';
-      e.target.textContent = '👁️'; // Change to an eye emoji
-    }
-  });
-});
-loginLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.location.href = '/login/login.html'; // Update with actual login path
+  signUp(username, email, password);
 });
