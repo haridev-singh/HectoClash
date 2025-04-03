@@ -8,302 +8,7 @@
   <script type="module" src="/login/lauth.js" defer></script>
   <script type="module" src="/login/sauth.js" defer></script>
   <script src="/login/login.js" defer></script>
-  <!-- <link rel="stylesheet" href="auth.css" /> -->
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap");
-
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      font-family: "Tektur", sans-serif;
-      box-sizing: border-box;
-      overflow-x: hidden;
-      color: #fff;
-    }
-
-    video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -1;
-    }
-
-    .content {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 1;
-      padding: 30px 20px 0px 20px;
-    }
-
-    .logo-title {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      margin-top: 30px;
-      margin-bottom: 20px;
-      text-align: center;
-      animation: fadeSlide 0.6s ease;
-    }
-
-    .logo-title img {
-      margin-right: 20px;
-      height: 60px;
-      width: auto;
-      margin-bottom: 10px;
-    }
-
-    .logo-title h1 {
-      font-size: 36px;
-      font-weight: 800;
-      color: #fff;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-    }
-
-    .auth-container {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 22px;
-      padding: 0;
-      max-width: 420px;
-      width: 100%;
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      box-shadow: 0 10px 40px rgba(255, 255, 255, 0.08),
-        0 10px 60px rgba(0, 0, 0, 0.4);
-      overflow: hidden;
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      position: relative;
-      margin-top: 10px;
-      animation: fadeSlide 0.6s ease;
-    }
-
-    @keyframes fadeSlide {
-      0% {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .tab-switch {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      background: rgba(255, 255, 255, 0.15);
-      padding: 12px 20px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      border-top-left-radius: 22px;
-      border-top-right-radius: 22px;
-      transition: background 0.3s ease;
-    }
-
-    .tab-switch button {
-      padding: 10px 25px;
-      font-size: 16px;
-      border: none;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.05);
-      color: #fff;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
-      backdrop-filter: blur(10px);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .tab-switch button:hover {
-      background: rgba(255, 255, 255, 0.12);
-      transform: scale(1.03);
-    }
-
-    .tab-switch button.active-tab {
-      background: #ffffff;
-      color: #000;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
-      transform: scale(1.08);
-    }
-
-    .form-card {
-      padding: 30px;
-      display: none;
-      background: rgba(255, 255, 255, 0.03);
-      border-bottom-left-radius: 22px;
-      border-bottom-right-radius: 22px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .form-card h2 {
-      font-size: 28px;
-      margin-bottom: 25px;
-    }
-
-    form {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    form input {
-      width: 90%;
-      padding: 12px 20px;
-      margin: 10px 0;
-      border-radius: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      background-color: rgba(255, 255, 255, 0.05);
-      color: #fff;
-      font-size: 16px;
-      transition: background 0.3s ease, border 0.3s ease;
-    }
-
-    form input::placeholder {
-      color: #cccccc;
-    }
-
-    form input:focus {
-      border: 1px solid #ffffff;
-      outline: none;
-      background-color: rgba(255, 255, 255, 0.08);
-    }
-
-    button[type="submit"] {
-      width: 90%;
-      padding: 12px;
-      margin-top: 15px;
-      background-color: #ffffff;
-      color: #000;
-      font-weight: bold;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    button[type="submit"]:hover {
-      background-color: #e5e5e5;
-      transform: scale(1.03);
-    }
-
-    .toggle-link {
-      margin-top: 15px;
-      font-size: 14px;
-    }
-
-    .toggle-link a {
-      color: #ffd700;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .toggle-link a:hover {
-      text-shadow: 0 0 5px #ffd700;
-    }
-
-    .footer {
-      margin-top: auto;
-      width: 100%;
-      padding: 20px;
-      text-align: center;
-      color: #ffffffcc;
-      font-size: 14px;
-      margin-top: 40px;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    @media (max-width: 426px) {
-      .back-to-home {
-        display: none;
-      }
-
-      .logo-title img {
-        margin-right: 10px;
-      }
-    }
-
-    .checkbox {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      width: 95%;
-    }
-
-    .checkbox input {
-      width: auto;
-      margin-right: 0.8rem;
-    }
-
-    .forgot-password {
-      margin-top: 20px;
-    }
-
-    .forgot-password a {
-      text-decoration: none;
-      color: #ffffffb6;
-      font-size: 0.8rem;
-    }
-
-    .footer-section a {
-      text-decoration: none;
-      color: #ffffff;
-    }
-
-    .toggle-password {
-      position: absolute;
-      right: 35px;
-      top: 262px;
-      cursor: pointer;
-      color: #fff;
-      border: none;
-      background: none;
-    }
-
-    .toggle-password1 {
-      position: absolute;
-      right: 35px;
-      top: 328px;
-      cursor: pointer;
-      color: #fff;
-      border: none;
-      background: none;
-    }
-
-    .toggle-password2 {
-      position: absolute;
-      right: 35px;
-      top: 392px;
-      cursor: pointer;
-      color: #fff;
-      border: none;
-      background: none;
-    }
-
-    #showError {
-      background-color: hsl(327, 90%, 28%);
-      display: none;
-      padding: 10px 20px;
-      margin: 10px;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-  </style>
+  <link rel="stylesheet" href="login.css" />
 </head>
 
 <body>
@@ -328,13 +33,15 @@
 
       <div class="form-card" id="login-card">
         <h2>Login</h2>
-        <div id="showError"></div>
+        <div id="showError">AA</div>
         <form>
           <input type="email" id="loginemail" placeholder="Email" required />
-          <input type="password" id="loginpassword" placeholder="Password" required />
-          <button type="button" class="toggle-password">
-            <img width="20px" src="/login/images/view.png" alt="toggle password" />
-          </button>
+          <div class="input-container">
+            <input type="password" id="loginpassword" placeholder="Password" required />
+            <button type="button" class="toggle-password">
+              <img width="20px" src="/login/images/view.png" alt="toggle password" />
+            </button>
+          </div>
           <div class="checkbox">
             <input type="checkbox" id="rememberMe" placeholder="remember-me" />
             <p>Remember me</p>
@@ -350,15 +57,19 @@
         <form>
           <input type="text" id="username" placeholder="Username" required />
           <input type="email" id="email" placeholder="Email" required />
-          <input type="password" id="password" placeholder="Password" required />
-          <button type="button" class="toggle-password1">
-            <img width="20px" src="/login/images/view.png" alt="toggle password" />
-          </button>
-          <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
-          <button type="button" class="toggle-password2">
-            <img width="20px" src="/login/images/view.png" alt="toggle password" />
-          </button>
-          <button type="submit" id="signupsubmit">Create Account</button>
+          <div class="input-container">
+            <input type="password" id="password" placeholder="Password" required />
+            <button type="button" class="toggle-password1">
+              <img width="20px" src="/login/images/view.png" alt="toggle password" />
+            </button>
+          </div>
+          <div class="input-container">
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+            <button type="button" class="toggle-password2">
+              <img width="20px" src="/login/images/view.png" alt="toggle password" />
+            </button>
+          </div>
+            <button type="submit" id="signupsubmit">Create Account</button>
         </form>
       </div>
     </div>
